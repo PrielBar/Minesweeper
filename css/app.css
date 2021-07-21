@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+    font-size:x-large
+}
+
+
+body {background-color: black; color:white}
+
+.game-board td {
+    width: 40px;
+    height:40px;
+    text-align: center;
+    font-size:2.4em;
+}   
+
+.board-container{
+
+    background-color: white;
+    position: absolute
+    }   
+ 
+h1 {
+    font-size: xx-large;
+    font-style:oblique
+}    
