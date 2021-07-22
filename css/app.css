@@ -1,25 +1,191 @@
-*{
-    text-align: center;
-    font-size:x-large
+* {
+    box-sizing: border-box;
 }
 
+.box img {
+    display: block;
+    margin:auto;
+    cursor: pointer;
+}
 
-body {background-color: black; color:white}
-
-.game-board td {
-    width: 40px;
-    height:40px;
+body {
+    background-image: url(../img.jpg);
+    margin: 0;
+    color: #6bc76f;
+    height:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
     text-align: center;
-    font-size:2.4em;
-}   
+    object-fit:fill ;
+}
 
-.board-container{
+.board {
+    font-family: "Audiowide", sans-serif;
+    position: absolute;
+    left: 400px;
+    text-align: center;
+   
+}
 
-    background-color: white;
-    position: absolute
-    }   
- 
 h1 {
-    font-size: xx-large;
-    font-style:oblique
-}    
+    height: 100x;
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    font-size: 40px;
+    margin-left: 30px;
+    font-style: oblique;
+}
+
+.buttons button {
+    font-family: "Audiowide", sans-serif;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: 50px;
+    width: 155px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 2s;
+    display: inline-block;
+}
+
+.Beginner {
+    color: black ;
+}
+
+.Intermediate {
+    color: black ;
+}
+
+.Expert {
+    color: black ;
+}
+
+.Beginner:hover {
+    background-color:black ;
+    color: white;
+}
+
+.Intermediate:hover {
+    background-color: black ;
+    color: white;
+}
+
+.Expert:hover {
+    background-color:black ;
+    color: white;
+}
+
+.divider {
+    margin-left: 30px;
+}
+
+.timer {
+    display: inline-block;
+    width: 200px;
+    height: 90px;
+    background-color: rgb(221, 211, 211);
+    padding: 10px 30px;
+    border: outset 5px white;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.smiley {
+    border: outset 5px white;
+    display: inline-block;
+    margin-left: 60px;
+    font-size: 40px;
+    height: 60px;
+    width: 70px;
+    background-color: rgb(221, 211, 211);
+    border-radius: 10px;
+}
+
+.mines-counter {
+    display: inline-block;
+    width: 200px;
+    height: 90px;
+    background-color:rgb(221, 211, 211);
+    padding: 10px 30px;
+    border: outset 5px white;
+    margin-left: 60px;
+}
+
+.life {
+    border: inset 5px white;
+    width: 130px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: rgb(221, 211, 211);
+    text-align: center;
+    text-indent: 10px;
+    display: inline-block;
+}
+
+.hint {
+    border: inset 5px white;
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-color: rgb(221, 211, 211);
+    text-align: left;
+    text-indent: 10px;
+}
+
+.safe {
+    border: inset 5px white;
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-color: rgb(221, 211, 211);
+    text-align: left;
+    text-indent: 10px;
+}
+
+.game-board {
+    margin: auto;
+    margin-top: 10px;
+    width: 500px;
+    height: 500px;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+tr {
+    height: 7.5%;
+}
+
+td {
+    font-size: 100%;
+    border: 5px outset whitesmoke;
+}
+
+.cell {
+    background-color: rgb(8, 51, 8)
+}
+
+.cell:hover {
+    background-color: rgb(24, 104, 71)
+}
+
+.hide {
+    display: none;
+}
+
+.footer {
+    margin-top: 20px;
+    border-top: 5px black solid;
+    padding: 10px;
+}
+ 
