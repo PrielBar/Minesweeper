@@ -11,7 +11,7 @@
 body {
     background-image: url(../img.jpg);
     margin: 0;
-    color: #6bc76f;
+    color: #4db352;
     height:100%;
     background-size:cover;
     background-repeat: no-repeat;
@@ -30,7 +30,6 @@ body {
 h1 {
     height: 100x;
     width: 600px;
-    background-color: white;
     padding: 20px;
     font-size: 40px;
     margin-left: 30px;
@@ -123,42 +122,17 @@ h1 {
     display: inline-block;
 }
 
-.hint {
-    border: inset 5px white;
-    display: inline-block;
-    width: 130px;
-    height: 30px;
-    margin-top: 10px;
-    margin-left: 30px;
-    background-color: rgb(221, 211, 211);
-    text-align: left;
-    text-indent: 10px;
-}
-
-.safe {
-    border: inset 5px white;
-    display: inline-block;
-    width: 130px;
-    height: 30px;
-    margin-top: 10px;
-    margin-left: 30px;
-    background-color: rgb(221, 211, 211);
-    text-align: left;
-    text-indent: 10px;
-}
-
 .game-board {
     margin: auto;
     margin-top: 10px;
-    width: 500px;
-    height: 500px;
-    background-color: lightgray;
+    width: 400px;
+    height: 400px;
     padding: 10px;
 }
 
 table {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     table-layout: fixed;
 }
 
@@ -168,11 +142,10 @@ tr {
 
 td {
     font-size: 100%;
-    border: 5px outset whitesmoke;
 }
 
 .cell {
-    background-color: rgb(8, 51, 8)
+    background-color:rgb(15, 77, 30)
 }
 
 .cell:hover {
@@ -183,9 +156,5 @@ td {
     display: none;
 }
 
-.footer {
-    margin-top: 20px;
-    border-top: 5px black solid;
-    padding: 10px;
-}
+
  

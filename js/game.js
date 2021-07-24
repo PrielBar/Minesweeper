@@ -1,18 +1,12 @@
 const MINE = '💣'
 const EMPTY = '';
 const FLAG = '🚩'
+const LIFE = '💘'
 
 var gameInter;
 var gBoard;
-var gIsHint;
-var gElHint;
-var gSafeElCell;
-var gIsSave;
-var gPrevMoves;
-var gCurrMove;
-var gPreMove;
-var gIsManualMode;
-var gManualMineCount;
+var gHearts;
+
 var gLevel = {
     size: 4,
     mine: 2
@@ -130,14 +124,11 @@ function changeSmiley(smiley) {
 
 function gameOver() {
     if (gGame.markedCount > gLevel.mine) {
-        console.log('Keep on trying!');
         return;
     } else if (isWin()) {
-        console.log('you win');
         changeSmiley('🤩')
         clearInterval(gameInter);
     } else {
-        console.log('you lose');
         changeSmiley('😥');
         clearInterval(gameInter);
         revealMines();
@@ -273,70 +264,4 @@ function removeHide(location) {
     var currCell = document.querySelector(`.cell${location.i}-${location.j}`);
     currCell.querySelector('div').classList.remove('hide');
     currCell.style.backgroundColor = 'rgb(210, 210, 210)';
-}
-
-function getHint(elHint) {k
-    if (gGame.isFirstClick) return;
-    if (gIsHint) {
-        gIsHint = false;
-        gElHint.classList.remove("hinted");
-        return;
-    }
-    gIsHint = true;
-    gElHint = elHint;
-    gElHint.classList.add("hinted");
-}
-function presentHint(rowIdx, colIdx) {
-    for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
-        if (i < 0 || i > gBoard.length - 1) continue
-        for (var j = colIdx - 1; j <= colIdx + 1; j++) {
-            if (j < 0 || j > gBoard[0].length - 1) continue
-            var currCell = gBoard[i][j];
-            var currElCell = document.querySelector(`.cell-${i}-${j}`);
-            if (!currElCell.classList.contains('covered')) continue;
-            currElCell.innerText = (currCell.isMine) ? MINE : (currCell.minesAroundCount) ? currCell.minesAroundCount : EMPTY;
-            currElCell.classList.remove('covered');
-            currElCell.classList.add('shown-hint');
-        }
-    }
-}
-
-function safeClick() {
-    if (gGame.safeClicks <= 0) return;
-    console.log('gIsSave', gIsSave);
-    if (gIsSave) return;
-    gIsSave = true;
-    var emptyCells = getEmptyCells(gBoard, Infinity, Infinity);
-    shuffle(emptyCells);
-    var location = drawCell(emptyCells);
-    gSafeElCell = document.querySelector(`.cell-${location.i}-${location.j}`);
-    gSafeElCell.classList.add('safe-cell');
-    setTimeout(function () { gIsSave = false; gSafeElCell.classList.remove('safe-cell') }, 2000);
-    document.querySelector('.safe-click span').innerText = --gGame.safeClicks;
-}
-
-function undo() {
-    if (gCurrMove.isFirstClick) return;
-    if (!gPrevMoves.length) return;
-    if (!gGame.isOn) return;
-    var prevMove = gPrevMoves.pop();
-    gGame.shownCount -= prevMove.shownCount;
-    resetSearchedCells(prevMove);
-    for (var i = 0; i < prevMove.uncoveredElCells.length; i++) {
-        var elCell = prevMove.uncoveredElCells[i];
-        elCell.classList.add('covered');
-        elCell.classList.remove('clicked-mine');
-        elCell.innerText = EMPTY;
-    }
-}
-
-function savePrevMove() {
-    var preMove = {
-        isFirstClick: gCurrMove.isFirstClick,
-        shownCount: gCurrMove.shownCount,
-        uncoveredElCells: gCurrMove.uncoveredElCells,
-        searchedCells: gCurrMove.searchedCells
-    }
-    gPrevMoves.push(preMove);
-    resetCurrMove();
 }
