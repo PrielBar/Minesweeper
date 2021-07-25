@@ -1,11 +1,9 @@
 const MINE = '💣'
 const EMPTY = '';
 const FLAG = '🚩'
-const LIFE = '💘'
 
 var gameInter;
 var gBoard;
-var gHearts;
 
 var gLevel = {
     size: 4,
@@ -17,7 +15,6 @@ var gGame = {
     firstClick: false,
     shownCount: 0,
     markedCount: 0,
-    life: 3
 }
 
 function initGame() {

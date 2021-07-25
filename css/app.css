@@ -22,7 +22,7 @@ body {
 .board {
     font-family: "Audiowide", sans-serif;
     position: absolute;
-    left: 400px;
+    left: 450px;
     text-align: center;
    
 }
@@ -81,13 +81,14 @@ h1 {
 
 .timer {
     display: inline-block;
-    width: 200px;
+    width: 150px;
     height: 90px;
     background-color: rgb(221, 211, 211);
     padding: 10px 30px;
     border: outset 5px white;
     margin-top: 20px;
     margin-left: 30px;
+    border-radius: 50%;
 }
 
 .smiley {
@@ -99,29 +100,19 @@ h1 {
     width: 70px;
     background-color: rgb(221, 211, 211);
     border-radius: 10px;
+    border-radius: 50%;
 }
 
 .mines-counter {
     display: inline-block;
-    width: 200px;
+    width: 150px;
     height: 90px;
     background-color:rgb(221, 211, 211);
     padding: 10px 30px;
     border: outset 5px white;
     margin-left: 60px;
+    border-radius: 50%;
 }
-
-.life {
-    border: inset 5px white;
-    width: 130px;
-    height: 30px;
-    margin-top: 10px;
-    background-color: rgb(221, 211, 211);
-    text-align: center;
-    text-indent: 10px;
-    display: inline-block;
-}
-
 .game-board {
     margin: auto;
     margin-top: 10px;
@@ -131,8 +122,8 @@ h1 {
 }
 
 table {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     table-layout: fixed;
 }
 
@@ -156,5 +147,7 @@ td {
     display: none;
 }
 
-
+.footer {
+    color: black;
+}
  
